@@ -1,6 +1,10 @@
-# Things that should not be in a README
+# Web 3 Smart Contracts
 
-## But they are :)
+## Info
+
+https://theprimeagen.github.io/web3-smart-contracts/
+
+## Things that should not be in a README
 
 ### Metamask credentials
 
@@ -24,6 +28,8 @@ npx webback
 ```
 
 ### Python Server
+
+<http://localhost:6969/dist/>
 
 ```text
 python3 -m http.server 6969
