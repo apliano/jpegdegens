@@ -3,6 +3,7 @@ dotenv.config();
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -42,6 +43,7 @@ module.exports = {
       ),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
     }),
+    new FaviconsWebpackPlugin('src/favicon.ico'),
   ],
 
   watch: true,
