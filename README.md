@@ -2,6 +2,12 @@
 
 ## Info
 
+### Solidity Website
+
+https://soliditylang.org/
+
+### Course
+
 https://theprimeagen.github.io/web3-smart-contracts/
 
 ## Things that should not be in a README
