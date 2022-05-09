@@ -49,10 +49,11 @@ python3 -m http.server 6969
 npx hardhat node
 ```
 
-### Deployment Script
+### Deployment Scripts
 
 (This needs the server to be already running)
 
 ```text
 npx hardhat run scripts/deploy-hello.ts --network localhost
+npx hardhat run scripts/deploy-counter.ts --network localhost
 ```
