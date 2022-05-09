@@ -25,19 +25,23 @@ async function requestAccounts() {
 }
 
 async function run() {
-  const address = process.env.CONTRACT_ADDRESS ?? '';
-  console.log('Contract address: ', address);
+  const address = process.env.CONTRACT_ADDRESS;
+  if (!address) {
+    throw new Error('Missing contract address');
+  }
 
   if (!(await hasAccounts()) && !(await requestAccounts())) {
     throw new Error('No accounts available');
   }
 
-  const hello = new ethers.Contract(
+  const helloContract = new ethers.Contract(
     address,
     ['function hello() public pure returns(string memory)'],
     new ethers.providers.Web3Provider(getEth()),
   );
-  document.body.innerHTML = await hello.hello();
+
+  console.log('Good to go, mate');
+  document.body.innerHTML = await helloContract.hello();
 }
 
 run();
