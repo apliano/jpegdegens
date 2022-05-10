@@ -1,4 +1,5 @@
 import '@nomiclabs/hardhat-waffle';
+import 'hardhat-gas-reporter';
 
 /**
  * @type import('hardhat/config').HardhatUserConfig

@@ -5,6 +5,7 @@
   "author": "Alvaro Perez Liano <alvaro.perezliano@shopify.com>",
   "license": "MIT",
   "scripts": {
+    "test": "npx hardhat test",
     "webpack": "npx webpack",
     "web": "python3 -m http.server 6969",
     "server": "npx hardhat node",
@@ -26,6 +27,7 @@
     "favicons": "^7.0.0-beta.4",
     "favicons-webpack-plugin": "^5.0.2",
     "hardhat": "^2.9.3",
+    "hardhat-gas-reporter": "^1.0.8",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
