@@ -1,5 +1,7 @@
 import './styles.css';
-import { Contract, ethers } from 'ethers';
+import { ethers } from 'ethers';
+import Counter from '../artifacts/contracts/Counter.sol/Counter.json';
+import HelloWorld from '../artifacts/contracts/HelloWorld.sol/HelloWorld.json';
 
 function getEth() {
   const eth = window.ethereum;
@@ -46,7 +48,7 @@ async function runHello() {
 
   const helloContract = new ethers.Contract(
     contractHelloAddress,
-    ['function hello() public pure returns(string memory)'],
+    HelloWorld.abi,
     new ethers.providers.Web3Provider(getEth()),
   );
 
@@ -65,10 +67,7 @@ async function runCounter() {
 
   const counterContract = new ethers.Contract(
     contractCounterAddress,
-    [
-      'function count() public',
-      'function getCounter() public view returns (uint32)',
-    ],
+    Counter.abi,
     new ethers.providers.Web3Provider(getEth()).getSigner(),
   );
 
@@ -84,10 +83,11 @@ async function runCounter() {
   const buttonEl = document.createElement('button');
   buttonEl.innerText = 'Increase Counter';
   buttonEl.onclick = async function () {
-    const tx = await counterContract.count();
-    await tx.wait();
-    setCounter();
+    await counterContract.count();
   };
+
+  // Using the event CounterInc to update the Counter info
+  counterContract.on(counterContract.filters.CounterInc(), setCounter);
 
   document.getElementById('counter')!.append(counterEl, buttonEl);
 }

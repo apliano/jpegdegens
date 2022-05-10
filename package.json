@@ -7,8 +7,9 @@
   "scripts": {
     "webpack": "npx webpack",
     "web": "python3 -m http.server 6969",
-    "server": "npx hardhat node",
-    "deploy": "npx hardhat run scripts/ --network localhost"
+    "server": "npm run clean && npx hardhat node",
+    "deploy": "npx hardhat run scripts/ --network localhost",
+    "clean": "rm -rf artifacts cache dist"
   },
   "devDependencies": {
     "@metamask/onboarding": "^1.0.1",
