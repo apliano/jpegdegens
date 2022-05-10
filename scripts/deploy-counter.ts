@@ -11,7 +11,8 @@ async function deploy() {
 }
 
 async function count(counter: Contract) {
-  console.log('Counter: ', await counter.count());
+  await counter.count();
+  console.log('Counter: ', await counter.getCounter());
 }
 
 export async function deployCounter() {
