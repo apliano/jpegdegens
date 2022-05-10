@@ -38,8 +38,11 @@ module.exports = {
       inject: 'body',
     }),
     new webpack.DefinePlugin({
-      'process.env.CONTRACT_ADDRESS': JSON.stringify(
-        process.env.CONTRACT_ADDRESS,
+      'process.env.CONTRACT_HELLO_ADDRESS': JSON.stringify(
+        process.env.CONTRACT_HELLO_ADDRESS,
+      ),
+      'process.env.CONTRACT_COUNTER_ADDRESS': JSON.stringify(
+        process.env.CONTRACT_COUNTER_ADDRESS,
       ),
       'process.env.DEBUG': JSON.stringify(process.env.DEBUG),
     }),
@@ -47,7 +50,6 @@ module.exports = {
   ],
 
   watch: true,
-
   devServer: {
     historyApiFallback: true,
     contentBase: './',
