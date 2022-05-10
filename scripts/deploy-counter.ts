@@ -14,4 +14,6 @@ async function count(counter: Contract) {
   console.log('Counter: ', await counter.count());
 }
 
-deploy().then(count);
+export async function deployCounter() {
+  deploy().then(count);
+}

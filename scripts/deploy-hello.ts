@@ -14,4 +14,6 @@ async function sayHello(hello: Contract) {
   console.log('Say Hello: ', await hello.hello());
 }
 
-deploy().then(sayHello);
+export async function deployHello() {
+  deploy().then(sayHello);
+}

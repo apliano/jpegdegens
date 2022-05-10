@@ -4,6 +4,12 @@
   "main": "index.js",
   "author": "Alvaro Perez Liano <alvaro.perezliano@shopify.com>",
   "license": "MIT",
+  "scripts": {
+    "webpack": "npx webpack",
+    "web": "python3 -m http.server 6969",
+    "server": "npx hardhat node",
+    "deploy": "npx hardhat run scripts/ --network localhost"
+  },
   "devDependencies": {
     "@metamask/onboarding": "^1.0.1",
     "@nomiclabs/hardhat-ethers": "^2.0.5",
