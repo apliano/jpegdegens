@@ -10,12 +10,12 @@ async function deploy() {
   return fallback;
 }
 
-async function count(fallback: Contract) {
+async function fallback(fallback: Contract) {
   // Hackity Hack to make hardhat believe that f has a count function
   const f = await ethers.getContractAt('IFallback', fallback.address);
   await f.count();
 }
 
 export async function deployFallback() {
-  deploy().then(count);
+  deploy().then(fallback);
 }
